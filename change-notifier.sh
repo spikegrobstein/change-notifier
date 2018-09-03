@@ -119,7 +119,7 @@ emails=( "$@" )
 
 statefile="${check_script}.state"
 
-tempfile="$( mktemp -t 'change-notifier' )"
+tempfile="$( mktemp '/tmp/change-notifier.XXXXXX' )"
 trap 'rm -rf "$tempfile"' EXIT
 
 e::info "Creating tempfile at $tempfile"
